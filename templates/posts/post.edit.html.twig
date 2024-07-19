@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier le post
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/edit.post.css') }}">
+{% endblock %}
+{% block body %}
+	<section>
+		<h1>Modifier votre post</h1>
+
+		<div class="container_edit_form">
+			{{ form_start(editForm) }}
+			{{ form_widget(editForm) }}
+			<button class="btn_register">Enregistrer</button>
+			{{ form_end(editForm) }}
+			<form action="{{ path('post.delete', {'slug': post.slug, 'id': post.id}) }}" method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce post ?');">
+				<input type="hidden" name="_method" value="DELETE">
+				<button class="btn_delete" type="submit">Supprimer</button>
+			</form>
+		</div>
+	</section>
+{% endblock %}

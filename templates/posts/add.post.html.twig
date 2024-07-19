@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Créer un post
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+{% block body %}
+	<section>
+		<h1>Créer un post</h1>
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button class="btn">Ajouter</button>
+		{{ form_end(form) }}</section>
+{% endblock %}

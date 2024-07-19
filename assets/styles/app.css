@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: lightgray;
+}
+nav {
+    width: 100%;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+nav > a {
+    text-decoration: none;
+    color: black;
+    padding: 0 0.5em;
+    border-left: 1px solid;
+}
+.last_link {
+    border-right: 1px solid;
+}
+section {
+    margin-top: 5em;
+}
+h1 {
+    width: 90%;
+    font-size: 2em;
+    margin: 0.5em 5%;
+}
+h1,
+h2 {
+    text-align: center;
+}
+
+.btn {
+    margin: auto;    
+    margin-top: 1em;
+    width: 8em;
+    height: 2.5em;
+    align-self: center;
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid;
+}
+.btn:hover {
+    opacity: 0.6;
+}

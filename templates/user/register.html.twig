@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+{% block body %}
+	<section>
+		<h1>Créer un compte</h1>
+
+		{{ form_start(registerForm) }}
+		{{ form_row(registerForm.name) }}
+		{{ form_row(registerForm.secondName) }}
+		{{ form_row(registerForm.mail) }}
+		{{ form_row(registerForm.dateOfBirth) }}
+		{{ form_row(registerForm.plainPassword.first) }}
+		{{ form_row(registerForm.plainPassword.second) }}
+		<button class="btn">S'inscrire</button>
+		{{ form_end(registerForm) }}
+	</section>
+{% endblock %}

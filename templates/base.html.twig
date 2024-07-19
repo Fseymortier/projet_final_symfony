@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		{% block title %}Accueil
+		{% endblock %}
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		{{ encore_entry_link_tags('app') }}
+		{{ encore_entry_script_tags('app') }}
+	</head>
+	<body>
+		<header>
+			<nav>
+				{% if app.user %}
+					{# L'utilisateur est connecté #}
+					<a href="{{url('home')}}">Accueil</a>
+					<a href="{{url('posts.list')}}">Liste des posts</a>
+					<a href="{{url('post.add')}}">Ajouter un Post</a>
+					<a class="last_link" href="{{url('logout')}}">Se déconnecter</a>
+				{% else %}
+					{# L'utilisateur n'est pas connecté #}
+					<a href="{{url('home')}}">Accueil</a>
+					<a href="{{url('posts.list')}}">Liste des posts</a>
+					<a href="{{url('login')}}">Connexion</a>
+					<a class="last_link" href="{{url('register')}}">Inscription</a>
+				{% endif %}
+			</nav>
+		</header>
+		{% block body %}{% endblock %}
+	</body>
+</html>

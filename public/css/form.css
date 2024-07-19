@@ -1,0 +1,25 @@
+form {
+    width: 80%;
+    max-width: 30em;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0;
+}
+label {
+    font-size: 1.3em;
+}
+.input_form {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+}

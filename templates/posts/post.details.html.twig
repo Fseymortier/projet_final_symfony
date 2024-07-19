@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/post.details.css') }}">
+{% endblock %}
+{% block body %}
+	<section>
+		<article>
+			<h1>{{post.name}}</h1>
+			<p>Post crée par
+				{{post.author}}</p>
+			<p class="content">{{post.content}}</p>
+			<div class="container_date">
+				<time>Post crée le
+					{{post.createdAt|date('d/m/Y H:i') }}</time>
+				{% if post.updatedAt is null %}
+					{% else %}
+						<time>Post mis à jour le
+							{{post.updatedAt|date('d/m/Y H:i') }}</time>
+				{% endif %}
+			</div>
+			{% if currentUser and currentUser.id == post.userId %}
+				<a class="link_details btn" href="{{ path('post.edit', {'slug': post.slug, 'id': post.id}) }}">Modifier</a>
+			{% endif %}
+		</article>
+	</section>
+{% endblock %}

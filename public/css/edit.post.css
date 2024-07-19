@@ -1,0 +1,40 @@
+.container_edit_form {
+    width: 80%;
+    max-width: 35em;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid;
+    border-radius: 1em;
+    background-color: white;
+    gap: 10px;
+    align-items: center;
+}
+form,
+.form-group,
+.container_edit_form {
+    display: flex;
+    flex-direction: column;
+}
+.form-group {
+    margin: 1em 0;
+}
+label {
+    font-size: 1.3em;
+}
+.input_form {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 16px;
+}
+.btn_register,
+.btn_delete {
+    margin: auto;
+    width: 8em;
+    height: 2.5em;
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid;
+}

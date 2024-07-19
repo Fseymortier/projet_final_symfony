@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se conneccter
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+{% block body %}
+	<section>
+		<h1>Se connecter</h1>
+
+		{{ form_start(loginForm, {'action': path('login'), 'method': 'post'}) }}
+		{{ form_row(loginForm.mail) }}
+		{{ form_row(loginForm.password) }}
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+		<button type="submit" class="btn btn-primary">Connexion</button>
+		{{ form_end(loginForm) }}
+	</section>
+{% endblock %}
