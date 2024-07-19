@@ -6,9 +6,7 @@ Nom de DB "projet_symfony"
 composer install 
 # Installer les dépendances JavaScript 
 npm install ou yarn install 
-# Générer les actifs 
-npm run dev  ou yarn dev
  # Créer la base de données (si nécessaire) 
-php bin/console doctrine:database:create 
+php bin/console doctrine:database:create projet_symfony
 # Exécuter les migrations 
 php bin/console doctrine:migrations:migrate
